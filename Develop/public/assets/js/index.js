@@ -35,10 +35,11 @@ var deleteNote = function(id) {
 // If there is an activeNote, display it, otherwise render empty inputs
 var renderActiveNote = function() {
   $saveNoteBtn.hide();
-
+  
   if (activeNote.id) {
     $noteTitle.attr("readonly", true);
     $noteText.attr("readonly", true);
+    $noteTitle.attr(element.id);
     $noteTitle.val(activeNote.title);
     $noteText.val(activeNote.text);
   } else {
@@ -47,6 +48,7 @@ var renderActiveNote = function() {
     $noteTitle.val("");
     $noteText.val("");
   }
+
 };
 
 // Get the note data from the inputs, save it to the db and update the view
